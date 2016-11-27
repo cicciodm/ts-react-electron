@@ -1,7 +1,7 @@
 /// <reference path="node_modules/@types/node/index.d.ts"/>
 
 var webpack = require('webpack');
-var WebpackConfig = require('webpack-config');
+var { Config } = require('webpack-config');
 var path = require("path");
 
 var devConfig = new Config().extend("webpack.dev.config");

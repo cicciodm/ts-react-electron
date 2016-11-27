@@ -1,10 +1,13 @@
 /// <reference path="node_modules/@types/node/index.d.ts"/>
 
 var webpack = require('webpack');
-var WebpackConfig = require('webpack-config');
+var { Config } = require('webpack-config');
 var path = require("path");
 
 var mainConfig = new Config().extend("webpack.config");
+
+var nodeModulesPath = path.join(__dirname, 'node_modules');
+var isProduction = process.env.NODE_ENV == "production";
 
 var configExtension = {
     // Add overrides here for electron
@@ -38,7 +41,6 @@ var configExtension = {
     },
 
     plugins: [
-        webpackShared.exportAssetsAndDuplicateWithoutHashes,
         new webpack.IgnorePlugin(/io\.branch\.sdk/),
         new webpack.DefinePlugin({
             'process.env': {NODE_ENV: '"production"'},

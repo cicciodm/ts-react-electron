@@ -8,8 +8,8 @@
     "url": "git+https://github.com/cicciodm/ts-react-electron.git"
   },
   "scripts": {
-    "electron-build": "cross-env IsRetailBuild=true webpack --config webpack.electron.main.config.js && cross-env IsRetailBuild=true webpack --config webpack.electron.config.js && cp package.json objd/ && cp index.html objd/",
-    "electron-run": "cross-env HOT=1 ./node_modules/.bin/electron .",
+    "electron-build": "webpack --config webpack.electron.main.config.js && webpack --config webpack.electron.config.js && cp package.json objd/ && cp index.html objd/",
+    "electron-run": "./node_modules/.bin/electron .",
     "start": "node server.js",
     "build": "webpack"
   },
@@ -77,6 +77,8 @@
     "less-loader": "~2.2.3",
     "node-libs-browser": "~1.0.0",
     "react-hot-loader": "~1.3.0",
+    "postcss": "5.0.18",
+    "postcss-loader": "0.8.1",
     "style-loader": "~0.13.1",
     "ts-loader": "~0.8.2",
     "tslint": "~3.13.0",
